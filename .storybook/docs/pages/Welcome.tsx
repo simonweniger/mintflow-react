@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Button from '../../../src/Button'
-import Hero from '../../../src/Hero'
 import Link from '../../../src/Link'
 import Tooltip from '../../../src/Tooltip'
 
@@ -41,7 +40,7 @@ export const HomePage = () => {
         >
           <path d="M0 338L53.3 349.2C106.7 360.3 213.3 382.7 320 393.8C426.7 405 533.3 405 640 359.3C746.7 313.7 853.3 222.3 960 189.2C1066.7 156 1173.3 181 1280 159.2C1386.7 137.3 1493.3 68.7 1546.7 34.3L1600 0V595H1546.7C1493.3 595 1386.7 595 1280 595C1173.3 595 1066.7 595 960 595C853.3 595 746.7 595 640 595C533.3 595 426.7 595 320 595C213.3 595 106.7 595 53.3 595H0V338Z"></path>
         </svg>
-        <Hero.Content className="col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
+        <div className="col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
           <div className="flex-col gap-10 lg:px-10 lg:pb-32">
             <h1 className="font-title mb-2 py-4 font-extrabold lg:py-10">
               <div className="mb-2 text-5xl lg:text-7xl">mintflow-react</div>
@@ -89,7 +88,7 @@ export const HomePage = () => {
               </Button>
             </div>
           </div>
-        </Hero.Content>
+        </div>
       </div>
     </DocsWrapper>
   )
