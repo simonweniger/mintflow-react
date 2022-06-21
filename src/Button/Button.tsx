@@ -26,6 +26,7 @@ export type ButtonProps = Omit<
     active?: boolean
     startIcon?: ReactNode
     endIcon?: ReactNode
+    target?: '_blank' | '_self'
   }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -47,6 +48,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       dataTheme,
       className,
+      target,
       style,
       ...props
     },

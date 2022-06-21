@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Button from '../../../src/Button'
-import CodeMockup from '../../../src/CodeMockup'
 import Hero from '../../../src/Hero'
 import Link from '../../../src/Link'
 import Tooltip from '../../../src/Tooltip'
@@ -27,31 +26,7 @@ const githubMark = (
   </svg>
 )
 
-const checkMark = (
-  <svg
-    width="20"
-    height="20"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    className="inline-block h-6 w-6 stroke-current"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-    ></path>
-  </svg>
-)
-
 export const HomePage = () => {
-  const bulletPoints = [
-    'React components',
-    'Faster development',
-    'Cleaner JSX/TSX',
-    'Customizable and themeable',
-  ]
 
   return (
     <DocsWrapper>
@@ -82,16 +57,8 @@ export const HomePage = () => {
             </h1>
             <div className="flex w-full flex-col items-start space-y-10 lg:flex-row lg:space-x-4 lg:space-y-0">
               <div className="my-2 flex max-w-sm flex-col gap-2 text-left">
-                {bulletPoints.map((point, index) => (
-                  <div className="flex gap-2" key={`bulletPoint.${index}`}>
-                    {checkMark} {point}
-                  </div>
-                ))}
-              </div>
-
-              <CodeMockup className="border-base-content w-full max-w-sm flex-1 border-2 border-opacity-20 bg-transparent pb-6 text-left text-current lg:mx-0">
-                <CodeMockup.Line>
-                  npm i daisyui mintflow-react{' '}
+                  <div className="flex gap-2">
+                  yarn add mintflow-react{' '}
                   <Tooltip message="Copy">
                     <CopyButton
                       color="ghost"
@@ -99,14 +66,14 @@ export const HomePage = () => {
                       text="npm i daisyui mintflow-react"
                     />
                   </Tooltip>
-                </CodeMockup.Line>
-              </CodeMockup>
+                  </div>
+              </div>
             </div>
             <div className="pt-4 flex flex-row gap-2">
               <Button
                 active
                 startIcon={githubMark}
-                size="lg"
+                size="lg" 
                 color="ghost"
                 href="https://github.com/daisyui/mintflow-react"
                 target="_blank"

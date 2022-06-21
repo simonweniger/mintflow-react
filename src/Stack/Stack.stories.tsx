@@ -25,28 +25,6 @@ export const Default: Story<StackProps> = (args) => {
   )
 }
 
-export const StackedImages: Story<StackProps> = (args) => {
-  return (
-    <Stack {...args}>
-      <img
-        src="https://api.lorem.space/image/face?w=100&h=100&hash=8B7BCDC2"
-        alt="Image 1"
-        className="rounded"
-      />
-      <img
-        src="https://api.lorem.space/image/face?w=100&h=100&hash=500B67FB"
-        alt="Image 2"
-        className="rounded"
-      />
-      <img
-        src="https://api.lorem.space/image/face?w=100&h=100&hash=A89D0DE6"
-        alt="Image 3"
-        className="rounded"
-      />
-    </Stack>
-  )
-}
-
 export const StackedCardsWithBorder: Story<StackProps> = (args) => {
   return (
     <Stack {...args}>
