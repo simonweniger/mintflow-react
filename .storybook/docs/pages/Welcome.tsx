@@ -42,8 +42,8 @@ export const HomePage = () => {
         </svg>
         <div className="col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
           <div className="flex-col gap-10 lg:px-10 lg:pb-32">
-            <h1 className="font-title mb-2 py-4 font-extrabold lg:py-10">
-              <div className="mb-2 text-5xl lg:text-7xl">mintflow-react</div>
+            <div className="font-title mb-2 py-4 font-extrabold lg:py-10">
+              <h1 className="mb-2 text-5xl lg:text-7xl">mintflow-react</h1>
               <div className="text-2xl lg:text-3xl">
                 A React component library for{' '}
                 <Link color="info" href="https://daisyui.com/" target="_blank">
@@ -53,8 +53,8 @@ export const HomePage = () => {
                 the most popular, free and open-source <br />
                 Tailwind CSS component library
               </div>
-            </h1>
-            <div className="flex w-full flex-col items-start space-y-10 lg:flex-row lg:space-x-4 lg:space-y-0">
+            </div>
+            <div className="mockup-code flex w-full flex-col items-start space-y-10 lg:flex-row lg:space-x-4 lg:space-y-0">
               <div className="my-2 flex max-w-sm flex-col gap-2 text-left">
                   <div className="flex gap-2">
                   yarn add mintflow-react{' '}

@@ -4,9 +4,6 @@ import { twMerge } from 'tailwind-merge'
 
 import {
   IComponentBaseProps,
-  ComponentColor,
-  ComponentShape,
-  ComponentSize,
 } from '../types'
 
 export type ButtonProps = Omit<
@@ -15,17 +12,15 @@ export type ButtonProps = Omit<
 > &
   IComponentBaseProps & {
     href?: string
-    shape?: ComponentShape
-    size?: ComponentSize
-    variant?: 'outline' | 'link'
-    color?: ComponentColor
+    size?: 'lg' | 'sm'
+    variant?: 'primary' | 'secondary' | 'nav' | 'warning'
     fullWidth?: boolean
-    responsive?: boolean
     animation?: boolean
     loading?: boolean
-    active?: boolean
+    disabled?: boolean
     startIcon?: ReactNode
     endIcon?: ReactNode
+    onlyIcon?: ReactNode
     target?: '_blank' | '_self'
   }
 
@@ -34,17 +29,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       children,
       href,
-      shape,
       size,
-      variant,
-      color,
       startIcon,
       endIcon,
+      onlyIcon,
       fullWidth,
-      responsive,
       animation = true,
       loading,
-      active,
+      variant,
       disabled,
       dataTheme,
       className,
@@ -55,18 +47,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ): JSX.Element => {
     const classes = twMerge(
-      'btn',
+      'btn base1 px-6 transition transform ease-in-out duration-250 delay-150 hover:scale-105 hover:shadow-elevation-high hover:bg-neutral hover:text-neutral-content hover:border-none',
       className,
       clsx(((startIcon && !loading) || endIcon) && 'gap-2', {
-        [`btn-${size}`]: size,
-        [`btn-${shape}`]: shape,
-        [`btn-${variant}`]: variant,
-        [`btn-${color}`]: color,
+        [`btn-${size}`]: size === 'lg',
+        [`btn-${size} px-4 base2`]: size === 'sm',
+        'btn btn-circle': onlyIcon,
         'btn-block': fullWidth,
-        'btn-xs md:btn-sm lg:btn-md xl:btn-lg': responsive,
         'no-animation': !animation,
-        'btn-active': active,
-        'btn-disabled': disabled,
+        'btn-disabled bg-base-200': disabled,
+        'btn-primary hover:btn-default': variant === 'primary',
+        'btn-outline border-2 border-base-300 hover:btn-outline': variant === 'secondary',
+        'btn border-none bg-red-200 text-red-600 hover:text-white hover:border-2 hover:red-600 hover:bg-red-600 hover:text-white': variant === 'warning',
+        'btn-ghost hover:text-primary hover:bg-base-200': variant === 'nav',
         loading: loading,
       })
     )
@@ -76,7 +69,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <a className={classes} style={style} href={href}>
           {startIcon && startIcon}
           {children}
-          {endIcon && endIcon}
+          {onlyIcon && onlyIcon}
+          {endIcon && endIcon }
         </a>
       )
     } else {
@@ -91,6 +85,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         >
           {startIcon && !loading && startIcon}
           {children}
+          {onlyIcon && onlyIcon}
           {endIcon && endIcon}
         </button>
       )

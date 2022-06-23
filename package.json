@@ -79,10 +79,12 @@
     "vite": "^2.8.6"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.5",
+    "daisyui": "^2.15.4",
+    "heroicons": "^1.0.6",
     "react": ">=16",
     "react-dom": "^18.2.0",
     "storybook": "^6.5.9",
-    "daisyui": "^2.15.4",
     "tailwindcss": "^3.1.3"
   }
 }

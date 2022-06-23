@@ -1,9 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-
 import Table, { TableProps } from '.'
 import Checkbox from '../Checkbox'
-import Mask from '../Mask'
 import Badge from '../Badge'
 import Button from '../Button'
 
@@ -113,8 +111,8 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
+              <img
+                className="rounded-full w-12 h-12"
                 src="http://daisyui.com/tailwind-css-component-profile-2@56w.png"
               />
               <div>
@@ -130,7 +128,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
               </Badge>
             </div>
             <div>Purple</div>
-            <Button color="ghost" size="xs">
+            <Button color="ghost" size="sm">
               details
             </Button>
           </Table.Row>
@@ -138,9 +136,9 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="http://daisyui.com/tailwind-css-component-profile-3@56w.png"
+              <img
+                className="rounded-full w-12 h-12"
+                src="http://daisyui.com/tailwind-css-component-profile-2@56w.png"
               />
               <div>
                 <div className="font-bold">Brice Swyre</div>
@@ -155,7 +153,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
               </Badge>
             </div>
             <div>Red</div>
-            <Button color="ghost" size="xs">
+            <Button color="ghost" size="sm">
               details
             </Button>
           </Table.Row>
@@ -163,9 +161,9 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="http://daisyui.com/tailwind-css-component-profile-4@56w.png"
+              <img
+                className="rounded-full w-12 h-12"
+                src="http://daisyui.com/tailwind-css-component-profile-2@56w.png"
               />
               <div>
                 <div className="font-bold">Marjy Ferencz</div>
@@ -188,9 +186,9 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="http://daisyui.com/tailwind-css-component-profile-5@56w.png"
+              <img
+                className="rounded-full w-12 h-12"
+                src="http://daisyui.com/tailwind-css-component-profile-2@56w.png"
               />
               <div>
                 <div className="font-bold">Yancy Tear</div>

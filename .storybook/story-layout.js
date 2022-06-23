@@ -4,8 +4,6 @@ import theme from "prism-react-renderer/themes/vsDark"
 
 import { useGlobalTheme } from './theming'
 
-import CodeMockup from '../src/CodeMockup'
-import Navbar from '../src/Navbar'
 import Tabs from '../src/Tabs'
 import Theme from '../src/Theme'
 
@@ -19,12 +17,6 @@ const StoryLayout = ({ children, title, description, source }) => {
 
   return (
     <Theme dataTheme={globalTheme} className="w-full h-screen p-8 bg-base-100">
-      <Navbar className="p-0 border-b border-neutral text-base-content">
-        <Navbar.Start>
-          <span className="text-lg font-bold">mintflow-react</span>
-        </Navbar.Start>
-      </Navbar>
-
       <div className="w-full h-full my-4">
         <h1 className="text-4xl text-base-content font-bold">{title}</h1>
         <p className="text-base-content">{description}</p>
@@ -32,7 +24,7 @@ const StoryLayout = ({ children, title, description, source }) => {
           {/* Mobile view */}
           <div className='block sm:hidden'>
             {children}
-            <CodeMockup className="w-full mb-8 mt-3">
+            <div className="mockup-code w-full mb-8 mt-3">
               <Highlight {...defaultProps} theme={theme} code={source} language="jsx">
                 {({ tokens, getLineProps, getTokenProps }) => (
                   <pre slot="html">
@@ -46,7 +38,7 @@ const StoryLayout = ({ children, title, description, source }) => {
                   </pre>
                 )}
               </Highlight>
-            </CodeMockup>
+            </div>
           </div>
 
           {/* Desktop view */}
@@ -76,7 +68,7 @@ const StoryLayout = ({ children, title, description, source }) => {
                   {children}
                 </div>
               ) : (
-                <CodeMockup className="w-full mb-8">
+                <div className="mockup-code w-full mb-8">
                   <Highlight {...defaultProps} theme={theme} code={source} language="jsx">
                     {({ tokens, getLineProps, getTokenProps }) => (
                       <pre slot="html">
@@ -90,7 +82,7 @@ const StoryLayout = ({ children, title, description, source }) => {
                       </pre>
                     )}
                   </Highlight>
-                </CodeMockup>
+                </div>
               )}
             </div>
           </div>

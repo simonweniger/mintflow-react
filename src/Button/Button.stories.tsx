@@ -1,6 +1,5 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-
 import Button, { ButtonProps } from '.'
 
 export default {
@@ -16,66 +15,56 @@ export default {
   },
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => {
-  return <Button {...args} />
-}
-export const Default = Template.bind({})
-Default.args = {
-  children: 'Button',
-}
-
-export const Colors: Story<ButtonProps> = (args) => {
+export const Default: Story<ButtonProps> = (args) => {
   return (
     <div>
-      <div>
-        <Button {...args}>Default</Button>
-        <Button {...args} color="primary">
-          Primary
+      <div className='flex space-x-4'>
+        <Button variant='primary'>Primary Button</Button>
+        <Button variant="secondary">
+          Secondary Button
         </Button>
-        <Button {...args} color="secondary">
-          Secondary
+        <Button variant="warning">
+          Warning Button
         </Button>
-        <Button {...args} color="accent">
-          Accent
-        </Button>
-        <Button {...args} color="ghost">
-          Ghost
-        </Button>
-      </div>
-      <div>
-        <Button {...args} color="success">
-          Success
-        </Button>
-        <Button {...args} color="info">
-          Info
-        </Button>
-        <Button {...args} color="warning">
-          Warning
-        </Button>
-        <Button {...args} color="error">
-          Error
+        <Button variant="nav">
+          Nav Item
         </Button>
       </div>
     </div>
   )
-}
-Colors.args = {
-  className: "m-1"
 }
 
-export const Variants: Story<ButtonProps> = (args) => {
+export const Size: Story<ButtonProps> = (args) => {
   return (
-    <div className="flex gap-x-2">
-      <Button {...args}>Default</Button>
-      <Button {...args} variant="outline">
-        Outline
-      </Button>
-      <Button {...args} variant="link">
-        Link
-      </Button>
+    <div>
+      <div className='flex space-x-4 items-center'>
+        <Button variant='primary' size='lg'>Large Size</Button>
+        <Button variant='primary'>Default Size</Button>
+        <Button variant='primary' size='sm'>Small Size</Button>
+      </div>
     </div>
   )
 }
+
+export const Disabled: Story<ButtonProps> = (args) => {
+  return (
+    <div>
+      <div className='flex space-x-4'>
+        <Button variant='primary' disabled={true}>Primary Button</Button>
+        <Button variant="secondary" disabled={true}>
+          Secondary Button
+        </Button>
+        <Button variant="warning" disabled={true}>
+          Warning Button
+        </Button>
+        <Button variant="nav" disabled={true}>
+          Nav Item
+        </Button>
+      </div>
+    </div>
+  )
+}
+
 
 export const Icons: Story<ButtonProps> = (args) => {
   const favoriteIcon = (
@@ -97,11 +86,13 @@ export const Icons: Story<ButtonProps> = (args) => {
 
   return (
     <div className="flex gap-x-2">
-      <Button {...args} startIcon={favoriteIcon}>
+      <Button  startIcon={favoriteIcon}>
         Icon at Start
       </Button>
-      <Button {...args} endIcon={favoriteIcon}>
+      <Button endIcon={favoriteIcon}>
         Icon at End
+      </Button>
+      <Button onlyIcon={favoriteIcon}>
       </Button>
     </div>
   )
